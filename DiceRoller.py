@@ -1,5 +1,75 @@
 import random #imports the random module
 
+def dice1():#Dice image 1
+    print('''
+     ______
+    |      |
+    |      |
+    |  *   |
+    |      |
+    |______|
+
+    ''')
+
+def dice2():#Dice image 2
+    print('''
+     ______
+    |      |
+    |      |
+    | *  * |
+    |      |
+    |______|
+
+    ''')
+
+def dice3():#Dice image 3
+    print('''
+     ______
+    |      |
+    |  *   |
+    |      |
+    | *  * |
+    |______|
+
+    ''')
+
+def dice4():#Dice image 4
+    print('''
+     ______
+    |      |
+    | *  * |
+    |      |
+    | *  * |
+    |______|
+
+    ''')
+
+def dice5():#Dice image 5
+    print('''
+     ______
+    |      |
+    | *  * |
+    |  *   |
+    | *  * |
+    |______|
+
+    ''')
+
+def dice6():#Dice image 6
+    print('''
+     ______
+    |      |
+    | ***  |
+    |      |
+    | ***  |
+    |______|
+
+    ''')
+
+def roll():#random integer function using random module.
+    randomroll = random.randint(1, 6)
+    return randomroll
+
 
 def main():#main function
     player1 = 0#pyr1 base value
@@ -34,14 +104,47 @@ def main():#main function
     #will go through the same amount of times as the rounds amount that was inputed.
     
     while roundsamount != cutoff:#While loop that
+        
         player1 = roll()#player 1 is assigned  random interger
         scores1.append(player1)#adds score to the score list for player 1
         print(player1name + " rolled a:")#print statement for player 1's score
-        print(str(player1))
+        if player1 == 1:
+            dice1()
+        elif player1 == 2:
+            dice2()
+        elif player1 ==3:
+            dice3()
+        elif player1 == 4:
+            dice4()
+        elif player1 == 5:
+            dice5()
+        elif player1 == 6:
+            dice6()
+        else:
+            print("ERROR with dice Images")
+            break
+
+        
         player2 = roll()#player 2 is assigned  random interger
         scores2.append(player2)#adds score to the score list for player 2
         print("\n" +player2name + " rolled a:")#print statement for player 1's score
-        print(str(player2))
+        if player2 == 1:
+            dice1()
+        elif player2 == 2:
+            dice2()
+        elif player2 ==3:
+            dice3()
+        elif player2 == 4:
+            dice4()
+        elif player2 == 5:
+            dice5()
+        elif player2 == 6:
+            dice6()
+        else:
+            print("ERROR with dice Images")
+            break
+
+        
         roundsamount = roundsamount + 1#adds 1 to the rounds amount so as to reach the cutoff.
         if player1 == player2:#draw statement
             print("\n---DRAW---\n")
@@ -61,10 +164,6 @@ def main():#main function
         print("Overall Winner is " + player2name + "! SCORE: " + str(Totalscoreplayer2))
 
 
-
-def roll():#random integer function using random module.
-    randomroll = random.randint(1, 6)
-    return randomroll
 
 
 main()#excecution of the main function
